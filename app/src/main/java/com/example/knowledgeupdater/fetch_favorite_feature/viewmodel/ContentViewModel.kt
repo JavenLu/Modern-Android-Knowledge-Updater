@@ -1,0 +1,51 @@
+package com.example.knowledgeupdater.fetch_favorite_feature.viewmodel
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.knowledgeupdater.fetch_favorite_feature.model.local.ContentEntity
+import com.example.knowledgeupdater.fetch_favorite_feature.model.remote.ContentResponseEntity
+import com.example.knowledgeupdater.fetch_favorite_feature.model.repository.ContentRepository
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+
+class ContentViewModel(private val repository: ContentRepository) : ViewModel() {
+    private val _content = MutableStateFlow<List<ContentResponseEntity>>(emptyList())
+    val contentFromNetworkStateFlow: StateFlow<List<ContentResponseEntity>> = _content.asStateFlow()
+
+    fun fetchContent() {
+        viewModelScope.launch {
+            try {
+                _content.value = repository.fetchContent()
+            } catch (e: Exception) {
+                _content.value = emptyList()
+            }
+        }
+    }
+
+    val newestContentFromDatabaseStateFlow: StateFlow<List<ContentEntity>> =
+        repository.getContentFlow.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = emptyList()
+        )
+
+    fun saveContentFromNetworkToDatabase() {
+        contentFromNetworkStateFlow.value.let { list ->
+            if (list.isNotEmpty()) {
+                list.forEach {
+                    viewModelScope.launch {
+                        repository.saveContent(ContentEntity(it._id, it.content, it.author))
+                    }
+                }
+
+            }
+
+        }
+    }
+
+
+}

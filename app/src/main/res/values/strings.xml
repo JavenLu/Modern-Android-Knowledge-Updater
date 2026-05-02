@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Modern-Android-Knowledge-Updater</string>
+    <string name="content_of_network">Showcase Web Content:</string>
+    <string name="fetch_content">Fetch</string>
+    <string name="favorites">Favorites</string>
+    <string name="showcase_local_favorites">Showcase Local Favorites:</string>
 </resources>
