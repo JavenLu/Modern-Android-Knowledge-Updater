@@ -36,8 +36,8 @@ class ContentViewModel(private val repository: ContentRepository) : ViewModel() 
     fun saveContentFromNetworkToDatabase() {
         contentFromNetworkStateFlow.value.let { list ->
             if (list.isNotEmpty()) {
-                list.forEach {
-                    viewModelScope.launch {
+                viewModelScope.launch {
+                    list.forEach {
                         repository.saveContent(ContentEntity(it._id, it.content, it.author))
                     }
                 }
