@@ -2,7 +2,6 @@ package com.example.knowledgeupdater.fetch_favorite_feature
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.knowledgeupdater.fetch_favorite_feature.model.local.ContentDatabase
 import com.example.knowledgeupdater.fetch_favorite_feature.model.local.ContentEntityDao
 import com.example.knowledgeupdater.fetch_favorite_feature.model.remote.ContentApi

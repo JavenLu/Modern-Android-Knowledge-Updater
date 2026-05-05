@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".fetch_favorite_feature.KnowledgeUpdaterApplication"
+        android:name=".fetch_favorite_feature_hilt.KnowledgeUpdaterApplicationHilt"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ModernAndroidKnowledgeUpdater">
         <activity
-            android:name=".fetch_favorite_feature.view.MainActivity"
+            android:name=".fetch_favorite_feature_hilt.view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.ModernAndroidKnowledgeUpdater">
             <intent-filter>
