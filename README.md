@@ -9,7 +9,7 @@
 
 
 
-A showcase of modern Android development using Jetpack Compose, Coroutine, Flow, Room, and Retrofit following MVVM architecture.
+A showcase of modern Android development using Jetpack Compose, Coroutine, Flow, Room, Hilt and Retrofit following MVVM architecture.
 
 ## Update Log
 
