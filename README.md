@@ -5,7 +5,7 @@
 ![Architecture](https://img.shields.io/badge/MVVM-Flow-blue?style=for-the-badge&logo=MVVM)
 ![Room](https://img.shields.io/badge/Room-v2.6.1-brown?style=for-the-badge&logo=Room)
 ![Retrofit](https://img.shields.io/badge/Retrofit-v2.11.0-pink?style=for-the-badge&logo=Retrofit)
-![Hilt](https://img.shields.io/badge/Hilt-v2.52-yellow?logo=Hilt)
+![Hilt](https://img.shields.io/badge/Hilt-v2.52-yellow?style=for-the-badge&logo=Hilt)
 
 
 
