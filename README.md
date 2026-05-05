@@ -5,10 +5,15 @@
 ![Architecture](https://img.shields.io/badge/MVVM-Flow-blue?style=for-the-badge&logo=MVVM)
 ![Room](https://img.shields.io/badge/Room-v2.6.1-brown?style=for-the-badge&logo=Room)
 ![Retrofit](https://img.shields.io/badge/Retrofit-v2.11.0-pink?style=for-the-badge&logo=Retrofit)
+![Hilt](https://img.shields.io/badge/Hilt-v2.52-yellow?logo=Hilt)
 
 
 
 A showcase of modern Android development using Jetpack Compose, Coroutine, Flow, Room, and Retrofit following MVVM architecture.
+
+## Update Log
+
+5.5.2026: Implement Hilt dependency injection and add samples.
 
 
 
